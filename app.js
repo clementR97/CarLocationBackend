@@ -1,7 +1,15 @@
 const express = require('express');
+//connecter la base de données
+const connectDB = require('./config/database');
+connectDB()
+//fin
 
 const app = express();
-
+app.use(express.json());
+//routes pour les voitures
+const voitureRoutes = require('./routes/voiture.routes.js');
+app.use('/api/voitures',voitureRoutes);
+//fin
 app.use((req, res, next) => {
   console.log('Requête reçue !');
   next();

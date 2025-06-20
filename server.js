@@ -1,7 +1,6 @@
 const http = require('http');
 const app = require('./app');
-const connectDB = require('./config/database');
-connectDB()
+
 const normalizePort = val => {
   const port = parseInt(val, 10);
 
