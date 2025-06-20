@@ -6,10 +6,17 @@ connectDB()
 
 const app = express();
 app.use(express.json());
+
 //routes pour les voitures
 const voitureRoutes = require('./routes/voiture.routes.js');
 app.use('/api/voitures',voitureRoutes);
 //fin
+
+//api pour les utilisateurs
+const utilisateurRoutes = require('./routes/utilisateur.routes.js');
+app.use('/api/utilisateurs',utilisateurRoutes);
+//fin
+
 app.use((req, res, next) => {
   console.log('Requête reçue !');
   next();
