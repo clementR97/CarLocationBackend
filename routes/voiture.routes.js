@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const VoitureController = require('../controller/voiture.controller');
+const VoitureController = require('../controllers/voiture.controller');
 
 router.get('/',VoitureController.getAllVoitures);
 router.post('/',VoitureController.createVoiture);
