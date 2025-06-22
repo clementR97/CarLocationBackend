@@ -17,6 +17,11 @@ const utilisateurRoutes = require('./routes/utilisateur.routes.js');
 app.use('/api/utilisateurs',utilisateurRoutes);
 //fin
 
+//api pour reservation
+const reservationRoutes = require('./routes/reservation.routes.js');
+app.use('/api/reservation',reservationRoutes);
+//fin
+
 app.use((req, res, next) => {
   console.log('Requête reçue !');
   next();
