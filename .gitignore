@@ -1,0 +1,7 @@
+# Environment files - ✅ CRITIQUE
+/src/environments/environment.ts
+/src/environments/environment.prod.ts
+*.env
+*.env.local
+*.env.production
+.env
