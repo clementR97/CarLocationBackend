@@ -12,9 +12,9 @@ const voitureRoutes = require('./routes/voiture.routes.js');
 app.use('/api/voitures',voitureRoutes);
 //fin
 
-//api pour les utilisateurs
-const utilisateurRoutes = require('./routes/utilisateur.routes.js');
-app.use('/api/utilisateurs',utilisateurRoutes);
+//api pour Admin
+const adminRoutes = require('./routes/admin.routes.js');
+app.use('/api/admin',adminRoutes);
 //fin
 
 //api pour reservation
