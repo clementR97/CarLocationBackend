@@ -1,10 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 //connecter la base de données
 const connectDB = require('./config/database');
 connectDB()
 //fin
 
 const app = express();
+// configuration CORS
+app.use(cors({
+  origin:'http://localhost:4200',
+  credentials:true
+}));
 app.use(express.json());
 
 //routes pour les voitures
