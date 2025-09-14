@@ -4,7 +4,16 @@ const VoitureSchema = new mongoose.Schema({
 marque: {type: String, require: true},
 modele: {type:String, require: true},
 annee: {type:String, require: true},
+images: [{
+    url: String,
+    public_id: String,
+    alt: String,
+    backgroundRemoved: String,
+    withGrayBackground: String
+}],
+description: String,
+caracteristiques: [String],
 prixParJour: {type:Number, require: true},
 disponible: {type:Boolean, default: true}
-});
+}); 
 module.exports = mongoose.model('Voiture',VoitureSchema);
