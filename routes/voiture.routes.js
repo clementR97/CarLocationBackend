@@ -1,14 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const VoitureController = require('../controllers/voiture.controller');
-const {upload} = require('../gestion_image/cloudinary');
-router.get('/',VoitureController.getAllVoitures);
-router.post('/',VoitureController.createVoiture);
-router.put('/:id',VoitureController.UpdateVoiture);
-router.delete('/:id',VoitureController.DeleteVoiture);
+const { upload } = require('../config/cloudinary');
 
-// routes pour les images avec IA
-router.post('/upload-with-bg-removal',upload.single('image'),VoitureController.uploadImageWithBackgroundRemoval);
-router.get('/:publicId/background-variants',VoitureController.generateBackgroundVariants);
-router.delete('image/publicId',VoitureController,VoitureController.deleteImage);
+router.get('/', VoitureController.getAllVoitures);
+router.post('/', VoitureController.createVoiture);
+router.put('/:id', VoitureController.UpdateVoiture);
+router.delete('/:id', VoitureController.DeleteVoiture);
+
+// Routes pour les images avec IA
+router.post('/upload-with-bg-removal', upload.single('image'), VoitureController.uploadImageWithBackgroundRemoval);
+router.get('/:publicId/background-variants', VoitureController.generateBackgroundVariants);
+router.delete('/images/:publicId', VoitureController.deleteImage);
+
+// Routes utilitaires
+router.get('/test-cloudinary', VoitureController.testCloudinary);
+router.get('/check-credits', VoitureController.checkCredits);
+
 module.exports = router;
