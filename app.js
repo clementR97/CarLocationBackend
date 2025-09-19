@@ -28,6 +28,11 @@ const reservationRoutes = require('./routes/reservation.routes.js');
 app.use('/api/reservation',reservationRoutes);
 //fin
 
+// api pour gerer les clients
+const clientRoutes = require('./routes/client.routes.js');
+app.use('/api/clients',clientRoutes);
+// fin
+
 app.use((req, res, next) => {
   console.log('Requête reçue !');
   next();
